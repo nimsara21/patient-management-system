@@ -41,6 +41,6 @@ spring:
         - id: api-docs-auth-router
           uri: http://auth-service:4005
           predicates:
-            - Path=api/api-docs/auth
+            - Path=/api-docs/auth
           filters:
             - RewritePath=/api-docs/auth,/v3/api-docs
