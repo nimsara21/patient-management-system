@@ -37,3 +37,10 @@ spring:
               args:
                 regexp: /api-docs/patients
                 replacement: /v3/api-docs
+
+        - id: api-docs-auth-router
+          uri: http://auth-service:4005
+          predicates:
+            - Path=api/api-docs/auth
+          filters:
+            - RewritePath=/api-docs/auth,/v3/api-docs
